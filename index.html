@@ -639,7 +639,7 @@ function matchCard(m,i){
 /* ─── LEADERBOARD ─── */
 function renderLB(){
   const lb = calcLb();
-  const climber=prevLb.length?((()=>{for(let i=0;i<lb.length;i++){const pv=prevLb.indexOf(lb[i].user);if(pv>i)return lb[i].user;}return null}))()):null;
+  const climber=prevLb.length?(()=>{for(let i=0;i<lb.length;i++){const pv=prevLb.indexOf(lb[i].user);if(pv>i)return lb[i].user;}return null;})():null;
   prevLb=lb.map(x=>x.user);
 
   document.getElementById('lbgrid').innerHTML = lb.map((e,i)=>{
